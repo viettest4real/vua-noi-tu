@@ -10,6 +10,11 @@ import sys
 import gc
 from aiohttp import web
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 # ==========================================
 # 0. CỔNG KEEP-ALIVE SIÊU NHẸ (CHO RENDER & CRON-JOB)
 # ==========================================
